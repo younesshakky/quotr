@@ -15,7 +15,7 @@ window.addEventListener('load', function () {
   if(window.XMLHttpRequest){
     xhttp = new XMLHttpRequest;
   }else{
-    throw new Error("you're using an 10.000BC browser, are you a fucking dinossaur??")
+    throw new Error("you're using a 10.000BC browser, are you a fucking dinossaur??")
   }
 
   xhttp.onreadystatechange = function () {
@@ -66,7 +66,6 @@ for(i = 0; i < emos.length;i++){
 
   emos[i].onclick = function(){
     num = Math.floor(Math.random() * qLength); 
-
     quoPage.classList.add('is_visible')
     quoPage.style.backgroundColor = getComputedStyle(bodyWrap).backgroundColor;
 
@@ -82,22 +81,27 @@ for(i = 0; i < emos.length;i++){
 
       case 'happy':
         qLength = res.happy.length;
+        num = num
         printQuote(res.happy[num]);
         break;
       case 'angry':
         qLength = res.angry.length;
+        num = num
         printQuote(res.angry[num]);
         break;
       case 'loved':
         qLength = res.loved.length;
+        num = num
         printQuote(res.loved[num]);
         break;
       case 'sad':
         qLength = res.sad.length;
+        num = num
         printQuote(res.sad[num]);
         break;
       case 'disgusted':
         qLength = res.disgusted.length;
+        num = num
         printQuote(res.disgusted[num]);
         break;
       default:
