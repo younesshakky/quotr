@@ -37,8 +37,12 @@ document.getElementById('back').onclick = function() {
   }, 300);
 }
 
-function printQuote(resText){
-  quoContent.innerText = resText;
+function printQuote(resText, index){
+  index = num == -1 ? 0 : num;
+  if(resText[index] === undefined){ // a bug handling
+    resText[index] = "hell yeah, i'm undefined" 
+  }
+  quoContent.innerText = resText[index];
 }
 
 for(i = 0; i < emos.length;i++){
@@ -65,7 +69,7 @@ for(i = 0; i < emos.length;i++){
   }
 
   emos[i].onclick = function(){
-    num = Math.floor(Math.random() * qLength); 
+    num = Math.floor( Math.random() * (qLength - 1) ); 
     quoPage.classList.add('is_visible')
     quoPage.style.backgroundColor = getComputedStyle(bodyWrap).backgroundColor;
 
@@ -73,36 +77,33 @@ for(i = 0; i < emos.length;i++){
     svgClone.classList.remove('svg-faces');
     svgClone.id = 'on-top';
     quoPage.appendChild(svgClone);
-    // console.log(svgClone)    
-    if (quoContent.innerText == "undefined"){
-      printQuote('yeah im undefined');
-    }
+    console.log(num)    
     switch (this.id) {
 
       case 'happy':
         qLength = res.happy.length;
-        num = num
-        printQuote(res.happy[num]);
+        // num = num
+        printQuote(res.happy);
         break;
       case 'angry':
         qLength = res.angry.length;
-        num = num
-        printQuote(res.angry[num]);
+        // num = num
+        printQuote(res.angry);
         break;
       case 'loved':
         qLength = res.loved.length;
-        num = num
-        printQuote(res.loved[num]);
+        // num = num
+        printQuote(res.loved);
         break;
       case 'sad':
         qLength = res.sad.length;
-        num = num
-        printQuote(res.sad[num]);
+        // num = num
+        printQuote(res.sad);
         break;
       case 'disgusted':
         qLength = res.disgusted.length;
-        num = num
-        printQuote(res.disgusted[num]);
+        // num = num
+        printQuote(res.disgusted);
         break;
       default:
         throw new Error("this isn't a valid id");
