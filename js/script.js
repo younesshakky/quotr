@@ -77,7 +77,7 @@ for(i = 0; i < emos.length;i++){
     svgClone.classList.remove('svg-faces');
     svgClone.id = 'on-top';
     quoPage.appendChild(svgClone);
-    console.log(num)    
+    // console.log(num)
     switch (this.id) {
 
       case 'happy':
@@ -108,7 +108,7 @@ for(i = 0; i < emos.length;i++){
       default:
         throw new Error("this isn't a valid id");
     }
-    console.log(num);
+    // console.log(num);
   }
 }
 
