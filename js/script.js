@@ -117,7 +117,7 @@ for(i = 0; i < emos.length;i++){
 // i dont know i just like it this way..
 // PS: name please
 
-function anyFuckingName(){
+function autoResize(){
   width = window.innerWidth;
   var svgIcon = document.querySelectorAll('.svg-faces');
 
@@ -138,5 +138,5 @@ function anyFuckingName(){
   }
 }
 
-window.onload   = anyFuckingName;
-window.onresize = anyFuckingName;
+window.onload   = autoResize;
+window.onresize = autoResize;
